@@ -48,6 +48,10 @@ sui client publish --gas-budget 100000000
 
 Save the Package ID and any object IDs, then add them to `packages/blockchain/sdk/networkConfig.ts` under the right network’s `variables` (and optionally to `apps/dapp/.env.local`).
 
+## Move patterns
+
+All Move code must follow **[docs/MOVE-PATTERNS.md](docs/MOVE-PATTERNS.md)** (Capability, Hot Potato, Witness, etc.). Build and test before commit: `pnpm --filter @hack/blockchain build:contracts` and `test:contracts`.
+
 ## Pre-hackathon checklist
 
-See **[docs/PRE-HACKATHON-CHECKLIST.md](docs/PRE-HACKATHON-CHECKLIST.md)** for the list to run through when the hackathon starts (env, deps, Move build, deploy, wallet connect, team roles).
+See **[docs/PRE-HACKATHON-CHECKLIST.md](docs/PRE-HACKATHON-CHECKLIST.md)** for the list to run through when the hackathon starts (env, deps, Move build, deploy, wallet connect, team roles). See **[docs/HACKATHON-SUGGESTIONS.md](docs/HACKATHON-SUGGESTIONS.md)** for tips focused on Move patterns and team workflow.

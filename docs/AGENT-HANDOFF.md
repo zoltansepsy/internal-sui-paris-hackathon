@@ -30,7 +30,15 @@
 
 ---
 
-## 3. Architecture patterns (enforced by pre-commit)
+## 3. Move (on-chain)
+
+- **Contracts:** `packages/blockchain/contracts/sources/`. All on-chain logic must follow **[docs/MOVE-PATTERNS.md](MOVE-PATTERNS.md)** (Capability, Hot Potato, Witness, etc.).
+- **Before commit:** Ensure `pnpm --filter @hack/blockchain build:contracts` and `pnpm --filter @hack/blockchain test:contracts` pass.
+- **After publish:** Add Package ID and object IDs to `packages/blockchain/sdk/networkConfig.ts` for the chosen network (e.g. testnet).
+
+---
+
+## 4. Architecture patterns (TypeScript / app – enforced by pre-commit)
 
 These rules are checked by `pnpm check:patterns`. Follow them so commits don’t fail.
 
@@ -44,7 +52,7 @@ These rules are checked by `pnpm check:patterns`. Follow them so commits don’t
 
 ---
 
-## 4. Before every commit
+## 5. Before every commit
 
 Pre-commit runs:
 
@@ -58,8 +66,10 @@ Full details: **[docs/PRE-COMMIT-CHECKS.md](PRE-COMMIT-CHECKS.md)**.
 
 ---
 
-## 5. Useful links
+## 6. Useful links
 
+- **Move patterns (required for contracts):** [docs/MOVE-PATTERNS.md](MOVE-PATTERNS.md)
+- **Hackathon suggestions:** [docs/HACKATHON-SUGGESTIONS.md](HACKATHON-SUGGESTIONS.md)
 - **Pre-commit checks (what runs on commit):** [docs/PRE-COMMIT-CHECKS.md](PRE-COMMIT-CHECKS.md)
 - **Pre-hackathon checklist (env, Move, dApp, team):** [docs/PRE-HACKATHON-CHECKLIST.md](PRE-HACKATHON-CHECKLIST.md)
 - **Quick start and commands:** [README.md](../README.md)
@@ -67,7 +77,8 @@ Full details: **[docs/PRE-COMMIT-CHECKS.md](PRE-COMMIT-CHECKS.md)**.
 
 ---
 
-## 6. After you finish a task
+## 7. After you finish a task
 
 - Run `pnpm type-check` and `pnpm check:patterns` before committing.
-- If you changed the app or contracts, briefly note what you did in your commit message so the next agent or dev has context.
+- If you changed **Move**: run `pnpm --filter @hack/blockchain build:contracts` and `test:contracts` too.
+- Briefly note what you did in your commit message so the next agent or dev has context.

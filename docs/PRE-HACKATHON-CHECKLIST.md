@@ -28,6 +28,7 @@ Use this list when the hackathon starts so you only run and verify—no structur
 
 ## Team
 
+- [ ] Move patterns doc read and agreed: [docs/MOVE-PATTERNS.md](MOVE-PATTERNS.md)
 - [ ] Roles agreed (e.g. 2 Move, 2 frontend/integration)
 - [ ] Who deploys contracts and updates `networkConfig` / env (e.g. one “contract lead”)
 - [ ] Branch strategy (e.g. main + feature branches or one shared branch)
