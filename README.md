@@ -2,6 +2,8 @@
 
 24h hackathon dApp skeleton on SUI. Team of 4 – ready to build at full speed.
 
+**AI agents / multi-tool devs:** Read **[docs/AGENT-HANDOFF.md](docs/AGENT-HANDOFF.md)** first for stack, structure, patterns, and pre-commit rules.
+
 ## Prerequisites
 
 - **Node.js** 18+

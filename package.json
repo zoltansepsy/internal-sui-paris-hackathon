@@ -11,6 +11,7 @@
     "type-check": "turbo run type-check",
     "format": "prettier --write .",
     "format:check": "prettier --check .",
+    "check:patterns": "tsx tools/scripts/check-patterns.ts",
     "prepare": "husky",
     "clean": "turbo run clean && rm -rf node_modules"
   },
@@ -24,12 +25,17 @@
     ],
     "*.{json,md,yml,yaml}": [
       "prettier --write"
+    ],
+    "packages/blockchain/**/*.move": [
+      "bash -c 'sui move format --check' || true"
     ]
   },
   "devDependencies": {
+    "glob": "^11.0.0",
     "husky": "^9.1.7",
     "lint-staged": "^15.2.11",
     "prettier": "^3.7.4",
+    "tsx": "^4.19.2",
     "turbo": "latest",
     "typescript": "^5"
   },
